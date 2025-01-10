@@ -1,0 +1,28 @@
+# Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environment
+venv/
+
+# Flask-specific files
+instance/
+.webassets-cache
+
+# Configuration files
+config.py
+
+# IDE or editor files (if applicable)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Database files (if applicable)
+*.sqlite
+*.db
+
+# Logs
+*.log

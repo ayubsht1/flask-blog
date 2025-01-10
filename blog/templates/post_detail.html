@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <a href="/" class="btn btn-primary">Home</a>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Post Card -->
+            <div class="post-detail-card">
+                <!-- Post Title and Date -->
+                <h1 class="post-title">{{ post.title }}</h1>
+                <p class="post-date">Posted on {{ post.date_posted.strftime('%B %d, %Y') }}</p>
+
+                <!-- Post Content -->
+                <div class="post-content">
+                    <p>{{ post.content }}</p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="btn-container">
+                        <a href="{{ url_for('main.update_post', post_id=post.id) }}" class="btn btn-outline-primary btn-lg">Edit Post</a>
+                    <a href="{{ url_for('main.delete_post', post_id=post.id) }}" class="btn btn-outline-danger btn-lg">Delete Post</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
