@@ -10,7 +10,7 @@
                 <!-- Post Title and Date -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-date">Posted on {{ post.date_posted.strftime('%B %d, %Y') }}</p>
-
+                <p class="post-author">By {{ post.author.username }}</p>
                 <!-- Post Content -->
                 <div class="post-content">
                     <p>{{ post.content }}</p>
@@ -18,8 +18,12 @@
 
                 <!-- Action Buttons -->
                 <div class="btn-container">
+                    {% if current_user.is_authenticated %}
+                    {% if current_user == post.author %}
                         <a href="{{ url_for('main.update_post', post_id=post.id) }}" class="btn btn-outline-primary btn-lg">Edit Post</a>
                     <a href="{{ url_for('main.delete_post', post_id=post.id) }}" class="btn btn-outline-danger btn-lg">Delete Post</a>
+                    {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>

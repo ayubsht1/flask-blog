@@ -7,6 +7,9 @@ __pycache__/
 # Virtual environment
 venv/
 
+#migrations
+migrations/
+
 # Flask-specific files
 instance/
 .webassets-cache
