@@ -14,6 +14,7 @@ from blog.models import db, Post, User
 
 def create_app(config_class='config.Config'):
     app = Flask(__name__)
+    app.config['DEBUg'] = True
     app.config.from_object(config_class)
 
     # Initialize extensions
